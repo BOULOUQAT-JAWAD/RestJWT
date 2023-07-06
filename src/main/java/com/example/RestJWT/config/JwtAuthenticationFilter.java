@@ -54,6 +54,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                         null,
                         userDetails.getAuthorities()
                 );
+
+                // It builds the authentication details based on the provided request object, such as the remote address and session ID.
                 authToken.setDetails(
                         new WebAuthenticationDetailsSource().buildDetails(request)
                 );
